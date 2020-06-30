@@ -1,0 +1,1655 @@
+
+(object Petal
+    version    	50
+    _written   	"Rose 2006.0.0.060314"
+    charSet    	134)
+
+(object Design "Logical View"
+    is_unit    	TRUE
+    is_loaded  	TRUE
+    quid       	"5DA2F735019D"
+    enforceClosureAutoLoad 	FALSE
+    defaults   	(object defaults
+	rightMargin 	0.250000
+	leftMargin 	0.250000
+	topMargin  	0.250000
+	bottomMargin 	0.500000
+	pageOverlap 	0.250000
+	clipIconLabels 	TRUE
+	autoResize 	TRUE
+	snapToGrid 	TRUE
+	gridX      	0
+	gridY      	0
+	defaultFont 	(object Font
+	    size       	10
+	    face       	"Arial"
+	    bold       	FALSE
+	    italics    	FALSE
+	    underline  	FALSE
+	    strike     	FALSE
+	    color      	0
+	    default_color 	TRUE)
+	showMessageNum 	3
+	showClassOfObject 	TRUE
+	notation   	"Unified")
+    root_usecase_package 	(object Class_Category "Use Case View"
+	quid       	"5DA2F735019F"
+	exportControl 	"Public"
+	global     	TRUE
+	logical_models 	(list unit_reference_list
+	    (object Class "用户"
+		quid       	"5DA2F76502F9"
+		stereotype 	"Actor")
+	    (object Class "学生"
+		quid       	"5DA2F77F0147"
+		stereotype 	"Actor"
+		superclasses 	(list inheritance_relationship_list
+		    (object Inheritance_Relationship
+			quid       	"5DA2F7980328"
+			supplier   	"Use Case View::用户"
+			quidu      	"5DA2F76502F9")))
+	    (object Class "教师"
+		quid       	"5DA2F78B0281"
+		stereotype 	"Actor"
+		superclasses 	(list inheritance_relationship_list
+		    (object Inheritance_Relationship
+			quid       	"5DA2F7950219"
+			supplier   	"Use Case View::用户"
+			quidu      	"5DA2F76502F9")))
+	    (object Class "教务管理人员"
+		quid       	"5DA2F7A40131"
+		stereotype 	"Actor")
+	    (object UseCase "登录系统"
+		quid       	"5DA2F7B1031A")
+	    (object UseCase "成绩管理"
+		quid       	"5DA2F7D40181"
+		visible_modules 	(list dependency_list
+		    (object Dependency_Relationship
+			quid       	"5DA30B0D013E"
+			label      	"《include》"
+			supplier   	"Use Case View::生成成绩单"
+			quidu      	"5DA30B0303DC")))
+	    (object UseCase "教师、学生名单管理"
+		quid       	"5DA2F7E30291")
+	    (object UseCase "学期教学计划管理"
+		quid       	"5DA2F7EC006F")
+	    (object UseCase "课程分配"
+		quid       	"5DA2F8050348"
+		visible_modules 	(list dependency_list
+		    (object Dependency_Relationship
+			quid       	"5DA30AA703D5"
+			label      	"《include》"
+			supplier   	"Use Case View::打印任课通知书"
+			quidu      	"5DA30A9F002E")))
+	    (object UseCase "选课"
+		quid       	"5DA2F82E0067")
+	    (object UseCase "打印任课通知书"
+		quid       	"5DA30A9F002E"
+		visible_modules 	(list dependency_list
+		    (object Dependency_Relationship
+			quid       	"5DA30D6D038E"
+			label      	"《include》"
+			supplier   	"Use Case View::课程分配"
+			quidu      	"5DA2F8050348")))
+	    (object UseCase "生成成绩单"
+		quid       	"5DA30B0303DC"
+		visible_modules 	(list dependency_list
+		    (object Dependency_Relationship
+			quid       	"5DA30D650016"
+			label      	"《include》"
+			supplier   	"Use Case View::成绩管理"
+			quidu      	"5DA2F7D40181")))
+	    (object Association "$UNNAMED$0"
+		quid       	"5DA2F7B90349"
+		roles      	(list role_list
+		    (object Role "$UNNAMED$1"
+			quid       	"5DA2F7BA0270"
+			supplier   	"Use Case View::登录系统"
+			quidu      	"5DA2F7B1031A"
+			is_navigable 	TRUE)
+		    (object Role "$UNNAMED$2"
+			quid       	"5DA2F7BA0272"
+			supplier   	"Use Case View::学生"
+			quidu      	"5DA2F77F0147")))
+	    (object Association "$UNNAMED$3"
+		quid       	"5DA2F7BD000B"
+		roles      	(list role_list
+		    (object Role "$UNNAMED$4"
+			quid       	"5DA2F7BD0271"
+			supplier   	"Use Case View::登录系统"
+			quidu      	"5DA2F7B1031A"
+			is_navigable 	TRUE)
+		    (object Role "$UNNAMED$5"
+			quid       	"5DA2F7BD0273"
+			supplier   	"Use Case View::教师"
+			quidu      	"5DA2F78B0281")))
+	    (object Association "$UNNAMED$6"
+		quid       	"5DA2F7BF0314"
+		roles      	(list role_list
+		    (object Role "$UNNAMED$7"
+			quid       	"5DA2F7C00328"
+			supplier   	"Use Case View::登录系统"
+			quidu      	"5DA2F7B1031A"
+			is_navigable 	TRUE)
+		    (object Role "$UNNAMED$8"
+			quid       	"5DA2F7C0032A"
+			supplier   	"Use Case View::教务管理人员"
+			quidu      	"5DA2F7A40131")))
+	    (object Association "$UNNAMED$9"
+		quid       	"5DA2F7D9009A"
+		roles      	(list role_list
+		    (object Role "$UNNAMED$10"
+			quid       	"5DA2F7D902A8"
+			supplier   	"Use Case View::成绩管理"
+			quidu      	"5DA2F7D40181"
+			is_navigable 	TRUE)
+		    (object Role "$UNNAMED$11"
+			quid       	"5DA2F7D902AA"
+			supplier   	"Use Case View::教师"
+			quidu      	"5DA2F78B0281")))
+	    (object Association "$UNNAMED$12"
+		quid       	"5DA2F7DC0091"
+		roles      	(list role_list
+		    (object Role "$UNNAMED$13"
+			quid       	"5DA2F7DC0260"
+			supplier   	"Use Case View::成绩管理"
+			quidu      	"5DA2F7D40181"
+			is_navigable 	TRUE)
+		    (object Role "$UNNAMED$14"
+			quid       	"5DA2F7DC0262"
+			supplier   	"Use Case View::教务管理人员"
+			quidu      	"5DA2F7A40131")))
+	    (object Association "$UNNAMED$15"
+		quid       	"5DA2F80C00A2"
+		roles      	(list role_list
+		    (object Role "$UNNAMED$16"
+			quid       	"5DA2F80C02E0"
+			supplier   	"Use Case View::教师、学生名单管理"
+			quidu      	"5DA2F7E30291"
+			is_navigable 	TRUE)
+		    (object Role "$UNNAMED$17"
+			quid       	"5DA2F80C02E2"
+			supplier   	"Use Case View::教务管理人员"
+			quidu      	"5DA2F7A40131")))
+	    (object Association "$UNNAMED$18"
+		quid       	"5DA2F80E0274"
+		roles      	(list role_list
+		    (object Role "$UNNAMED$19"
+			quid       	"5DA2F80F0148"
+			supplier   	"Use Case View::学期教学计划管理"
+			quidu      	"5DA2F7EC006F"
+			is_navigable 	TRUE)
+		    (object Role "$UNNAMED$20"
+			quid       	"5DA2F80F014A"
+			supplier   	"Use Case View::教务管理人员"
+			quidu      	"5DA2F7A40131")))
+	    (object Association "$UNNAMED$21"
+		quid       	"5DA2F8110033"
+		roles      	(list role_list
+		    (object Role "$UNNAMED$22"
+			quid       	"5DA2F81102B0"
+			supplier   	"Use Case View::课程分配"
+			quidu      	"5DA2F8050348"
+			is_navigable 	TRUE)
+		    (object Role "$UNNAMED$23"
+			quid       	"5DA2F81102B2"
+			supplier   	"Use Case View::教务管理人员"
+			quidu      	"5DA2F7A40131")))
+	    (object Association "$UNNAMED$24"
+		quid       	"5DA2F831022D"
+		roles      	(list role_list
+		    (object Role "$UNNAMED$25"
+			quid       	"5DA2F8320128"
+			supplier   	"Use Case View::选课"
+			quidu      	"5DA2F82E0067"
+			is_navigable 	TRUE)
+		    (object Role "$UNNAMED$26"
+			quid       	"5DA2F832012A"
+			supplier   	"Use Case View::学生"
+			quidu      	"5DA2F77F0147"))))
+	logical_presentations 	(list unit_reference_list
+	    (object UseCaseDiagram "Main"
+		quid       	"5DA2F73600E3"
+		title      	"Main"
+		zoom       	100
+		max_height 	28350
+		max_width  	21600
+		origin_x   	0
+		origin_y   	0
+		items      	(list diagram_item_list
+		    (object ClassView "Class" "Use Case View::用户" @1
+			ShowCompartmentStereotypes 	TRUE
+			IncludeAttribute 	TRUE
+			IncludeOperation 	TRUE
+			location   	(392, 734)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@1
+			    location   	(392, 894)
+			    anchor_loc 	1
+			    nlines     	2
+			    max_width  	343
+			    justify    	0
+			    label      	"用户")
+			icon       	"Actor"
+			icon_style 	"Icon"
+			line_color 	3342489
+			quidu      	"5DA2F76502F9"
+			annotation 	8
+			autoResize 	TRUE)
+		    (object UseCaseView "Use Case View::成绩管理" @2
+			location   	(1265, 1347)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@2
+			    location   	(1265, 1485)
+			    anchor_loc 	1
+			    nlines     	2
+			    max_width  	630
+			    justify    	0
+			    label      	"成绩管理")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"5DA2F7D40181"
+			height     	118)
+		    (object UseCaseView "Use Case View::教师、学生名单管理" @3
+			location   	(1928, 1381)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@3
+			    location   	(1928, 1519)
+			    anchor_loc 	1
+			    nlines     	2
+			    max_width  	630
+			    justify    	0
+			    label      	"教师、学生名单管理")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"5DA2F7E30291"
+			height     	118)
+		    (object UseCaseView "Use Case View::学期教学计划管理" @4
+			location   	(2398, 1478)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@4
+			    location   	(2398, 1616)
+			    anchor_loc 	1
+			    nlines     	2
+			    max_width  	630
+			    justify    	0
+			    label      	"学期教学计划管理")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"5DA2F7EC006F"
+			height     	118)
+		    (object UseCaseView "Use Case View::课程分配" @5
+			location   	(2470, 762)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@5
+			    location   	(2470, 900)
+			    anchor_loc 	1
+			    nlines     	2
+			    max_width  	630
+			    justify    	0
+			    label      	"课程分配")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"5DA2F8050348"
+			height     	118)
+		    (object ClassView "Class" "Use Case View::教师" @6
+			ShowCompartmentStereotypes 	TRUE
+			IncludeAttribute 	TRUE
+			IncludeOperation 	TRUE
+			location   	(838, 1256)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@6
+			    location   	(838, 1416)
+			    anchor_loc 	1
+			    nlines     	2
+			    max_width  	343
+			    justify    	0
+			    label      	"教师")
+			icon       	"Actor"
+			icon_style 	"Icon"
+			line_color 	3342489
+			quidu      	"5DA2F78B0281"
+			annotation 	8
+			autoResize 	TRUE)
+		    (object InheritView "" @7
+			stereotype 	TRUE
+			line_color 	3342489
+			quidu      	"5DA2F7950219"
+			client     	@6
+			supplier   	@1
+			vertices   	(list Points
+			    (779, 1187)
+			    (478, 836))
+			line_style 	0)
+		    (object AssociationViewNew "$UNNAMED$9" @8
+			location   	(1025, 1293)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			stereotype 	TRUE
+			line_color 	3342489
+			quidu      	"5DA2F7D9009A"
+			roleview_list 	(list RoleViews
+			    (object RoleView "$UNNAMED$10" @9
+				Parent_View 	@8
+				location   	(187, 37)
+				stereotype 	TRUE
+				line_color 	3342489
+				quidu      	"5DA2F7D902A8"
+				client     	@8
+				supplier   	@2
+				vertices   	(list Points
+				    (1025, 1293)
+				    (1155, 1320))
+				line_style 	0)
+			    (object RoleView "$UNNAMED$11" @10
+				Parent_View 	@8
+				location   	(187, 37)
+				stereotype 	TRUE
+				line_color 	3342489
+				quidu      	"5DA2F7D902AA"
+				client     	@8
+				supplier   	@6
+				vertices   	(list Points
+				    (1025, 1293)
+				    (895, 1267))
+				line_style 	0)))
+		    (object ClassView "Class" "Use Case View::教务管理人员" @11
+			ShowCompartmentStereotypes 	TRUE
+			IncludeAttribute 	TRUE
+			IncludeOperation 	TRUE
+			location   	(1837, 2122)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@11
+			    location   	(1837, 2282)
+			    anchor_loc 	1
+			    nlines     	2
+			    max_width  	343
+			    justify    	0
+			    label      	"教务管理人员")
+			icon       	"Actor"
+			icon_style 	"Icon"
+			line_color 	3342489
+			quidu      	"5DA2F7A40131"
+			annotation 	8
+			autoResize 	TRUE)
+		    (object AssociationViewNew "$UNNAMED$12" @12
+			location   	(1567, 1757)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			stereotype 	TRUE
+			line_color 	3342489
+			quidu      	"5DA2F7DC0091"
+			roleview_list 	(list RoleViews
+			    (object RoleView "$UNNAMED$13" @13
+				Parent_View 	@12
+				location   	(-274, 7)
+				stereotype 	TRUE
+				line_color 	3342489
+				quidu      	"5DA2F7DC0260"
+				client     	@12
+				supplier   	@2
+				vertices   	(list Points
+				    (1567, 1757)
+				    (1357, 1473))
+				line_style 	0)
+			    (object RoleView "$UNNAMED$14" @14
+				Parent_View 	@12
+				location   	(-274, 7)
+				stereotype 	TRUE
+				line_color 	3342489
+				quidu      	"5DA2F7DC0262"
+				client     	@12
+				supplier   	@11
+				vertices   	(list Points
+				    (1567, 1757)
+				    (1777, 2042))
+				line_style 	0)))
+		    (object AssociationViewNew "$UNNAMED$15" @15
+			location   	(1874, 1793)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			stereotype 	TRUE
+			line_color 	3342489
+			quidu      	"5DA2F80C00A2"
+			roleview_list 	(list RoleViews
+			    (object RoleView "$UNNAMED$16" @16
+				Parent_View 	@15
+				location   	(33, 43)
+				stereotype 	TRUE
+				line_color 	3342489
+				quidu      	"5DA2F80C02E0"
+				client     	@15
+				supplier   	@3
+				vertices   	(list Points
+				    (1874, 1793)
+				    (1905, 1544))
+				line_style 	0)
+			    (object RoleView "$UNNAMED$17" @17
+				Parent_View 	@15
+				location   	(33, 43)
+				stereotype 	TRUE
+				line_color 	3342489
+				quidu      	"5DA2F80C02E2"
+				client     	@15
+				supplier   	@11
+				vertices   	(list Points
+				    (1874, 1793)
+				    (1844, 2042))
+				line_style 	0)))
+		    (object AssociationViewNew "$UNNAMED$18" @18
+			location   	(2076, 1846)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			stereotype 	TRUE
+			line_color 	3342489
+			quidu      	"5DA2F80E0274"
+			roleview_list 	(list RoleViews
+			    (object RoleView "$UNNAMED$19" @19
+				Parent_View 	@18
+				location   	(235, 96)
+				stereotype 	TRUE
+				line_color 	3342489
+				quidu      	"5DA2F80F0148"
+				client     	@18
+				supplier   	@4
+				vertices   	(list Points
+				    (2076, 1846)
+				    (2258, 1641))
+				line_style 	0)
+			    (object RoleView "$UNNAMED$20" @20
+				Parent_View 	@18
+				location   	(235, 96)
+				stereotype 	TRUE
+				line_color 	3342489
+				quidu      	"5DA2F80F014A"
+				client     	@18
+				supplier   	@11
+				vertices   	(list Points
+				    (2076, 1846)
+				    (1894, 2051))
+				line_style 	0)))
+		    (object AssociationViewNew "$UNNAMED$21" @21
+			location   	(2131, 1483)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			stereotype 	TRUE
+			line_color 	3342489
+			quidu      	"5DA2F8110033"
+			roleview_list 	(list RoleViews
+			    (object RoleView "$UNNAMED$22" @22
+				Parent_View 	@21
+				location   	(290, -267)
+				stereotype 	TRUE
+				line_color 	3342489
+				quidu      	"5DA2F81102B0"
+				client     	@21
+				supplier   	@5
+				vertices   	(list Points
+				    (2131, 1483)
+				    (2391, 925))
+				line_style 	0)
+			    (object RoleView "$UNNAMED$23" @23
+				Parent_View 	@21
+				location   	(290, -267)
+				stereotype 	TRUE
+				line_color 	3342489
+				quidu      	"5DA2F81102B2"
+				client     	@21
+				supplier   	@11
+				vertices   	(list Points
+				    (2131, 1483)
+				    (1871, 2042))
+				line_style 	0)))
+		    (object UseCaseView "Use Case View::登录系统" @24
+			location   	(1362, 662)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@24
+			    location   	(1362, 800)
+			    anchor_loc 	1
+			    nlines     	2
+			    max_width  	630
+			    justify    	0
+			    label      	"登录系统")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"5DA2F7B1031A"
+			height     	118)
+		    (object AssociationViewNew "$UNNAMED$3" @25
+			location   	(1080, 975)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			stereotype 	TRUE
+			line_color 	3342489
+			quidu      	"5DA2F7BD000B"
+			roleview_list 	(list RoleViews
+			    (object RoleView "$UNNAMED$4" @26
+				Parent_View 	@25
+				location   	(242, -281)
+				stereotype 	TRUE
+				line_color 	3342489
+				quidu      	"5DA2F7BD0271"
+				client     	@25
+				supplier   	@24
+				vertices   	(list Points
+				    (1080, 975)
+				    (1265, 765))
+				line_style 	0)
+			    (object RoleView "$UNNAMED$5" @27
+				Parent_View 	@25
+				location   	(242, -281)
+				stereotype 	TRUE
+				line_color 	3342489
+				quidu      	"5DA2F7BD0273"
+				client     	@25
+				supplier   	@6
+				vertices   	(list Points
+				    (1080, 975)
+				    (895, 1186))
+				line_style 	0)))
+		    (object AssociationViewNew "$UNNAMED$6" @28
+			location   	(1611, 1433)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			stereotype 	TRUE
+			line_color 	3342489
+			quidu      	"5DA2F7BF0314"
+			roleview_list 	(list RoleViews
+			    (object RoleView "$UNNAMED$7" @29
+				Parent_View 	@28
+				location   	(-230, -317)
+				stereotype 	TRUE
+				line_color 	3342489
+				quidu      	"5DA2F7C00328"
+				client     	@28
+				supplier   	@24
+				vertices   	(list Points
+				    (1611, 1433)
+				    (1413, 825))
+				line_style 	0)
+			    (object RoleView "$UNNAMED$8" @30
+				Parent_View 	@28
+				location   	(-230, -317)
+				stereotype 	TRUE
+				line_color 	3342489
+				quidu      	"5DA2F7C0032A"
+				client     	@28
+				supplier   	@11
+				vertices   	(list Points
+				    (1611, 1433)
+				    (1809, 2041))
+				line_style 	0)))
+		    (object UseCaseView "Use Case View::选课" @31
+			location   	(1429, 141)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@31
+			    location   	(1429, 279)
+			    anchor_loc 	1
+			    nlines     	2
+			    max_width  	630
+			    justify    	0
+			    label      	"选课")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"5DA2F82E0067"
+			height     	118)
+		    (object ClassView "Class" "Use Case View::学生" @32
+			ShowCompartmentStereotypes 	TRUE
+			IncludeAttribute 	TRUE
+			IncludeOperation 	TRUE
+			location   	(863, 206)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@32
+			    location   	(863, 366)
+			    anchor_loc 	1
+			    nlines     	2
+			    max_width  	343
+			    justify    	0
+			    label      	"学生")
+			icon       	"Actor"
+			icon_style 	"Icon"
+			line_color 	3342489
+			quidu      	"5DA2F77F0147"
+			annotation 	8
+			autoResize 	TRUE)
+		    (object InheritView "" @33
+			stereotype 	TRUE
+			line_color 	3342489
+			quidu      	"5DA2F7980328"
+			client     	@32
+			supplier   	@1
+			vertices   	(list Points
+			    (776, 304)
+			    (449, 665))
+			line_style 	0)
+		    (object AssociationViewNew "$UNNAMED$0" @34
+			location   	(1109, 431)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			stereotype 	TRUE
+			line_color 	3342489
+			quidu      	"5DA2F7B90349"
+			roleview_list 	(list RoleViews
+			    (object RoleView "$UNNAMED$1" @35
+				Parent_View 	@34
+				location   	(246, 225)
+				stereotype 	TRUE
+				line_color 	3342489
+				quidu      	"5DA2F7BA0270"
+				client     	@34
+				supplier   	@24
+				vertices   	(list Points
+				    (1109, 431)
+				    (1299, 604))
+				line_style 	0)
+			    (object RoleView "$UNNAMED$2" @36
+				Parent_View 	@34
+				location   	(246, 225)
+				stereotype 	TRUE
+				line_color 	3342489
+				quidu      	"5DA2F7BA0272"
+				client     	@34
+				supplier   	@32
+				vertices   	(list Points
+				    (1109, 431)
+				    (920, 258))
+				line_style 	0)))
+		    (object AssociationViewNew "$UNNAMED$24" @37
+			location   	(1119, 173)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			stereotype 	TRUE
+			line_color 	3342489
+			quidu      	"5DA2F831022D"
+			roleview_list 	(list RoleViews
+			    (object RoleView "$UNNAMED$25" @38
+				Parent_View 	@37
+				location   	(256, -33)
+				stereotype 	TRUE
+				line_color 	3342489
+				quidu      	"5DA2F8320128"
+				client     	@37
+				supplier   	@31
+				vertices   	(list Points
+				    (1119, 173)
+				    (1318, 150))
+				line_style 	0)
+			    (object RoleView "$UNNAMED$26" @39
+				Parent_View 	@37
+				location   	(256, -33)
+				stereotype 	TRUE
+				line_color 	3342489
+				quidu      	"5DA2F832012A"
+				client     	@37
+				supplier   	@32
+				vertices   	(list Points
+				    (1119, 173)
+				    (920, 196))
+				line_style 	0)))
+		    (object UseCaseView "Use Case View::打印任课通知书" @40
+			location   	(3221, 368)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@40
+			    location   	(3221, 506)
+			    anchor_loc 	1
+			    nlines     	2
+			    max_width  	630
+			    justify    	0
+			    label      	"打印任课通知书")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"5DA30A9F002E"
+			height     	118)
+		    (object UseCaseView "Use Case View::生成成绩单" @41
+			location   	(1178, 1703)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@41
+			    location   	(1178, 1841)
+			    anchor_loc 	1
+			    nlines     	2
+			    max_width  	630
+			    justify    	0
+			    label      	"生成成绩单")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"5DA30B0303DC"
+			height     	118)
+		    (object DependencyView "《include》" @42
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@42
+			    location   	(1205, 1577)
+			    anchor_loc 	1
+			    nlines     	1
+			    max_width  	235
+			    justify    	0
+			    label      	"《include》")
+			stereotype 	TRUE
+			line_color 	3342489
+			quidu      	"5DA30D650016"
+			client     	@41
+			supplier   	@2
+			vertices   	(list Points
+			    (1188, 1645)
+			    (1222, 1510))
+			line_style 	0)
+		    (object DependencyView "《include》" @43
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@43
+			    location   	(2818, 576)
+			    anchor_loc 	1
+			    nlines     	1
+			    max_width  	235
+			    justify    	0
+			    label      	"《include》")
+			stereotype 	TRUE
+			line_color 	3342489
+			quidu      	"5DA30D6D038E"
+			client     	@40
+			supplier   	@5
+			vertices   	(list Points
+			    (3062, 448)
+			    (2574, 704))
+			line_style 	0)))))
+    root_category 	(object Class_Category "Logical View"
+	quid       	"5DA2F735019E"
+	exportControl 	"Public"
+	global     	TRUE
+	subsystem  	"Component View"
+	quidu      	"5DA2F73501A0"
+	logical_models 	(list unit_reference_list)
+	logical_presentations 	(list unit_reference_list
+	    (object ClassDiagram "Main"
+		quid       	"5DA2F73600F6"
+		title      	"Main"
+		zoom       	100
+		max_height 	28350
+		max_width  	21600
+		origin_x   	0
+		origin_y   	0
+		items      	(list diagram_item_list))))
+    root_subsystem 	(object SubSystem "Component View"
+	quid       	"5DA2F73501A0"
+	physical_models 	(list unit_reference_list)
+	physical_presentations 	(list unit_reference_list
+	    (object Module_Diagram "Main"
+		quid       	"5DA2F73600E2"
+		title      	"Main"
+		zoom       	100
+		max_height 	28350
+		max_width  	21600
+		origin_x   	0
+		origin_y   	0
+		items      	(list diagram_item_list)))
+	category   	"Logical View"
+	quidu      	"5DA2F735019E")
+    process_structure 	(object Processes
+	quid       	"5DA2F73501A1"
+	ProcsNDevs 	(list
+	    (object Process_Diagram "Deployment View"
+		quid       	"5DA2F73501A3"
+		title      	"Deployment View"
+		zoom       	100
+		max_height 	28350
+		max_width  	21600
+		origin_x   	0
+		origin_y   	0
+		items      	(list diagram_item_list))))
+    properties 	(object Properties
+	attributes 	(list Attribute_Set
+	    (object Attribute
+		tool       	"Data Modeler"
+		name       	"propertyId"
+		value      	"809135966")
+	    (object Attribute
+		tool       	"Data Modeler"
+		name       	"default__Project"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"project"
+			value      	"")
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"TableCounter"
+			value      	0)
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"ViewCounter"
+			value      	0)
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"DomainCounter"
+			value      	0)
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"SPPackageCounter"
+			value      	0)
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"TriggerCounter"
+			value      	0)
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"IndexCounter"
+			value      	0)
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"ConstraintCounter"
+			value      	0)
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"StoreProcedureCounter"
+			value      	0)
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"PrimaryKeyCounter"
+			value      	0)
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"ForeignKeyCounter"
+			value      	0)
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"JoinCounter"
+			value      	0)
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"TableSpaceCounter"
+			value      	0)
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"cONTAINERCounter"
+			value      	0)
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"TablePrefix"
+			value      	"")
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"ViewPrefix"
+			value      	"")
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"DomainPrefix"
+			value      	"")
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"TriggerPrefix"
+			value      	"")
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"IndexPrefix"
+			value      	"")
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"ConstraintPrefix"
+			value      	"")
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"StoreProcedurePrefix"
+			value      	"")
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"PrimaryKeyPrefix"
+			value      	"")
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"ForeignKeyPrefix"
+			value      	"")
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"TableSpacePrefix"
+			value      	"")))
+	    (object Attribute
+		tool       	"Data Modeler"
+		name       	"default__Module-Spec"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"dmItem"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"DMName"
+			value      	"")
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"IsDatabase"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"TargetDatabase"
+			value      	"")
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"Location"
+			value      	"")
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"IsTableSpace"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"TableSpaceType"
+			value      	"")
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"IsDeault"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"BufferPool"
+			value      	"")
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"ExtentSize"
+			value      	1)
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"PrefetchSize"
+			value      	1)
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"PageSize"
+			value      	4)
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"ManagedBy"
+			value      	"")
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"ContainerList"
+			value      	"")))
+	    (object Attribute
+		tool       	"Data Modeler"
+		name       	"default__Category"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"dmItem"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"DMName"
+			value      	"")
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"dmSchema"
+			value      	"")
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"dmDomainPackage"
+			value      	"")
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"IsSchema"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"IsDomainPackage"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"IsRootSchema"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"IsRootDomainPackage"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"IsSchemaPackage"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"DatabaseID"
+			value      	"")
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"DBMS"
+			value      	"")))
+	    (object Attribute
+		tool       	"Data Modeler"
+		name       	"default__Class"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"dmItem"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"DMName"
+			value      	"")
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"IsTable"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"IsView"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"IsDomain"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"IsSPPackage"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"Synonymns"
+			value      	"")
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"TableSpaceID"
+			value      	"")
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"SourceId"
+			value      	"")
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"SourceType"
+			value      	"")
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"CorrelationName"
+			value      	"")
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"SelectClause"
+			value      	"")
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"IsUpdateable"
+			value      	TRUE)
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"CheckOption"
+			value      	"None")
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"IsSnapShot"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"IsDistinct"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"PersistToServer"
+			value      	"")
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"IsPackage"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"IsPackageWrapped"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"IsPackageBodyWrapped"
+			value      	FALSE)))
+	    (object Attribute
+		tool       	"Data Modeler"
+		name       	"default__Attribute"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"dmItem"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"DMName"
+			value      	"")
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"Ordinal"
+			value      	0)
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"IsIdentity"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"IsUnique"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"NullsAllowed"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"Length"
+			value      	0)
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"Scale"
+			value      	0)
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"ColumnType"
+			value      	"Native")
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"ForBitData"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"DefaultValueType"
+			value      	"")
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"DefaultValue"
+			value      	"")
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"SourceId"
+			value      	"")
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"SourceType"
+			value      	"")
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"OID"
+			value      	FALSE)))
+	    (object Attribute
+		tool       	"Data Modeler"
+		name       	"default__Association"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"dmItem"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"DMName"
+			value      	"")
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"IsRelationship"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"SourceId"
+			value      	"")
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"SourceType"
+			value      	"")
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"RIMethod"
+			value      	"")
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"ParentUpdateRule"
+			value      	"")
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"ParentUpdateRuleName"
+			value      	"")
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"ParentDeleteRule"
+			value      	"")
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"ParentDeleteRuleName"
+			value      	"")
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"ChildInsertRestrict"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"ChildInsertRestrictName"
+			value      	"")
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"ChildMultiplicity"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"ChildMultiplicityName"
+			value      	"")))
+	    (object Attribute
+		tool       	"Data Modeler"
+		name       	"default__Role"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"dmItem"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"DMName"
+			value      	"")
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"ConstraintName"
+			value      	"")))
+	    (object Attribute
+		tool       	"Data Modeler"
+		name       	"default__Operation"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"dmItem"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"DMName"
+			value      	"")
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"IsConstraint"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"ConstraintType"
+			value      	"")
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"IsIndex"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"IsTrigger"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"IsStoredProcedure"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"IsCluster"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"TableSpace"
+			value      	"")
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"FillFactor"
+			value      	0)
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"KeyList"
+			value      	"")
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"CheckPredicate"
+			value      	"")
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"IsUnique"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"DeferalMode"
+			value      	"")
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"InitialCheckTime"
+			value      	"")
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"TriggerType"
+			value      	"")
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"IsInsertEvent"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"IsUpdateEvent"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"IsDeleteEvent"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"RefOldTable"
+			value      	"")
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"RefNewTable"
+			value      	"")
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"RefOldRow"
+			value      	"")
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"RefNewRow"
+			value      	"")
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"IsRow"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"WhenClause"
+			value      	"")
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"Language"
+			value      	"SQL")
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"ProcType"
+			value      	"Procedure")
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"IsDeterministic"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"ParameterStyle"
+			value      	"")
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"ReturnedNull"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"ExternalName"
+			value      	"")
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"Length"
+			value      	"")
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"Scale"
+			value      	"")
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"ForBitData"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"DefaultValue"
+			value      	"")
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"DefaultValueType"
+			value      	"")
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"IsWrapped"
+			value      	FALSE)))
+	    (object Attribute
+		tool       	"Data Modeler"
+		name       	"default__Parameter"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"dmItem"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"DMName"
+			value      	"")
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"IsInParameter"
+			value      	TRUE)
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"IsOutParameter"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"Ordinal"
+			value      	"")
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"Length"
+			value      	"")
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"Scale"
+			value      	"")
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"ForBitData"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"DefaultValueType"
+			value      	"")
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"DefaultValue"
+			value      	"")
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"OperationID"
+			value      	"")))
+	    (object Attribute
+		tool       	"Data Modeler"
+		name       	"HiddenTool"
+		value      	FALSE)
+	    (object Attribute
+		tool       	"Data Modeler Communicator"
+		name       	"HiddenTool"
+		value      	FALSE)
+	    (object Attribute
+		tool       	"framework"
+		name       	"HiddenTool"
+		value      	FALSE)
+	    (object Attribute
+		tool       	"Rose Model Integrator"
+		name       	"HiddenTool"
+		value      	FALSE)
+	    (object Attribute
+		tool       	"Rose Web Publisher"
+		name       	"HiddenTool"
+		value      	FALSE)
+	    (object Attribute
+		tool       	"Version Control"
+		name       	"HiddenTool"
+		value      	FALSE))
+	quid       	"5DA2F73501A2"))
